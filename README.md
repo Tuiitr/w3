@@ -75,6 +75,8 @@ Within the draw function, various properties of the 2D rendering context (ctx) a
 
 
 Text Highlighter Functionality: The 'highlight-btn' class defines the styling of the button representing the text highlighter tool. JavaScript is utilized to implement the text highlighting functionality by detecting user text selection and applying a background color to the selected text or a specific area on a webpage.
+![Screenshot 2024-06-10 002540](https://github.com/Tuiitr/w3/assets/172133997/53513f6d-1e76-46d1-b213-0ff7b4526ae6)
+
 
 Function highlightSelection:
 
