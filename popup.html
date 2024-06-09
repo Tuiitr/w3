@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,21 +6,17 @@
 </head>
 <body>
   <div class="button-container">
-    <button id="activate-pen" class="pen-btn"><img src="images/pen.png" alt="Pen"></button>
-    <button id="activate-highlighter" class="highlight-btn"><img src="images/highlight.png" alt="Highlight"></button>
-    <button id="add-note" class="note-btn"><img src="images/note.png" alt="Add Note"></button>
-    <button id="undo-action" class="undo-btn"><img src="images/undo.png" alt="Undo"></button>
-    <button id="save-drawings" class="save-btn"><img src="images/save.png" alt="Save"></button>
+    <button id="pen-tool" class="pen-tool"><img src="photos/pen.png" alt="Pen"></button>
+    <button id="highlighter-btn" class="highlighter-btn"><img src="photos/highlight.png" alt="Highlighter"></button>
+    <button id="note-btn" class="note-btn"><img src="photos/note.png" alt="Add Note"></button>
+    <button id="undo-action-btn" class="undo-action-btn"><img src="photos/undo.png" alt="Undo"></button>
+    <button id="save-action-btn" class="save-action-btn"><img src="photos/save.png" alt="Save"></button>
   </div>
   <div id="color-picker-container">
-    <button class="color-button" data-color="yellow" style="background-color: yellow;"></button>
-    <button class="color-button" data-color="cyan" style="background-color: cyan;"></button>
-    <button class="color-button" data-color="lightgreen" style="background-color: lightgreen;"></button>
-    <button class="color-button" data-color="rgb(255, 77, 77)" style="background-color: rgb(255, 77, 77);"></button>
-  </div>
-  <div id="note-container" style="display:none;">
-    <textarea id="note-content" placeholder="Write your note here..."></textarea>
-    <button id="save-note" class="save-btn"><img src="images/save.png" alt="Save Note"></button>
+    <button class="color-selector-btn" data-color="yellow" style="background-color: yellow;"></button>
+    <button class="color-selector-btn" data-color="cyan" style="background-color: cyan;"></button>
+    <button class="color-selector-btn" data-color="lightgreen" style="background-color: lightgreen;"></button>
+    <button class="color-selector-btn" data-color="rgb(255, 77, 77)" style="background-color: rgb(255, 77, 77);"></button>
   </div>
   <script src="popup.js"></script>
   <script src="content.js"></script>

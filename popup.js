@@ -1,36 +1,23 @@
-document.getElementById('activate-pen').addEventListener('click', () => {
-    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-      chrome.tabs.sendMessage(tabs[0].id, { action: "pen" });
-    });
+document.addEventListener('DOMContentLoaded', function () {
+  const highlighterBtn = document.getElementById('highlighter-btn');
+  const colorPickerContainer = document.getElementById('color-picker-container');
+
+  highlighterBtn.addEventListener('click', () => {
+    colorPickerContainer.style.display = 'flex';
   });
-  
-  document.getElementById('activate-highlighter').addEventListener('click', () => {
-    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-      chrome.tabs.sendMessage(tabs[0].id, { action: "highlight-btn" });
-    });
-  });
-  
-  document.getElementById('save-drawings').addEventListener('click', () => {
-    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-      chrome.tabs.sendMessage(tabs[0].id, { action: "save-btn" });
-    }); 
-  }); 
-  
-  document.getElementById('undo-action').addEventListener('click', () => {
-    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-      chrome.tabs.sendMessage(tabs[0].id, { action: "undo-btn" });
-    });
-  });
-  
-  document.getElementById('activate-highlighter').addEventListener('click', () => {
-    document.getElementById('color-picker-container').style.display = 'flex';
-  });
-  
-  document.querySelectorAll('.color-button').forEach(button => {
+
+  document.querySelectorAll('.color-selector-btn').forEach(button => {
     button.addEventListener('click', () => {
-      const selectedColor = button.getAttribute('data-color');
+      const currentColor = button.getAttribute('data-color');
       chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-        chrome.tabs.sendMessage(tabs[0].id, { action: "highlight-btn", color: selectedColor });
+        chrome.tabs.sendMessage(tabs[0].id, { action: "highlighter-btn", color: currentColor }, (response) => {
+          console.log("Message sent to content script");
+        });
       });
     });
   });
+
+  colorPickerContainer.addEventListener('mouseleave', () => {
+    colorPickerContainer.style.display = 'none';
+  });
+});
