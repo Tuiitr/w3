@@ -1,22 +1,23 @@
 Web Annotator
+
 Author: Tushar kumar gautam
 
 Abstract:
 The Web Annotator Chrome extension aims to enhance users' interaction with web content through powerful annotation tools. This extension allows users to highlight text on any webpage using customizable, color-coded highlights, enabling efficient categorization and organization of significant sections. Users can also attach contextual notes to highlighted content, facilitating the addition of personal insights, comments, or supplementary information for future reference. One of the key features of this extension is the persistence of annotations across browser sessions, ensuring that users can revisit annotated pages with their highlights and notes intact even after closing and reopening the browser. This project report provides an overview of the project’s architecture, features, implementation details, and the technologies used. It highlights the motivation behind the project, the challenges addressed, the novelty and application innovation, as well as the future directions for development. This extension has a variety of applications, including teaching sessions, personal notes, and providing meaningful explanations to others. I've tried my best to make it robust and functional across all systems, screen sizes, and resolutions.
 
 Table of Contents
-Introduction
-How a Chrome Extension is Created?
-Implementation
-Concluding Remarks
-Introduction
+1.Introduction
+2.How a Chrome Extension is Created?
+3.Implementation
+4.Concluding Remarks
+Introduction:
 What is a Web Annotator?
 In this context, a web annotator is a Chrome extension that enhances user engagement with online content by offering tools for highlighting and annotating text on any webpage. It allows users to mark key sections with customizable color-coded highlights and add personal notes for additional context. These annotations are saved and persist across browser sessions, ensuring users can access their work anytime. The extension also provides features like keyboard shortcuts and a responsive design for optimal use on various devices. It aims to boost efficiency and organization for researchers, students, and professionals.
 
-Motivation for the Project
+Motivation for the Project:
 When Tinkering Labs released this project, I saw an opportunity to gain hands-on experience in web development, which I had not tried before. It was an enjoyable task that taught me many things throughout its execution. This project is particularly useful for teachers and students to explain and understand online concepts effectively. I also aimed to enhance my JavaScript skills by implementing a variety of functions, which this project allowed. Having never developed a Chrome extension before, I was excited to undertake this project.
 
-Application Domains
+Application Domains:
 Education: Enhancing the learning experience for students and educators by allowing them to highlight and annotate online course materials, academic papers, and e-books.
 
 Research: Assisting researchers in efficiently marking and taking notes on online journals, articles, and other digital resources, facilitating better organization and retrieval of information.
@@ -27,20 +28,20 @@ Personal Knowledge Management: Aiding individuals in bookmarking, highlighting, 
 
 Collaborative Work: Supporting collaborative annotation and sharing among teams, enabling better communication and idea exchange in academic, professional, and personal contexts.
 
-How a Chrome Extension is Created
+How a Chrome Extension is Created:
 Manifest File (manifest.json)
 The manifest file is a JSON file that provides essential information about the extension. It includes details such as the extension’s name, version, description, permissions (e.g., access to tabs, storage, and web requests), content scripts, background scripts, icons, and more. It serves as the roadmap for Chrome to understand how the extension should behave and what resources it requires. Therefore, it is the first file created when making an extension.
 
-Background Script (background.js)
+Background Script (background.js):
 The background script runs in the background and manages the extension’s core functionality. It is specified in the manifest file under the “background” key. This script can listen for events such as tab changes, browser actions, and network requests. It also maintains the extension’s state and handles tasks that do not require user interaction.
 
-Content Script (content.js)
+Content Script (content.js):
 Content scripts are injected into web pages based on specified URL patterns defined in the manifest file. These scripts can interact with the DOM of the web page, modify its content, and communicate with the background script using message passing. Content scripts are often used to enhance or modify the behavior of specific web pages to provide additional functionality.
 
-Popup HTML (popup.html) and Popup Script (popup.js)
+Popup HTML (popup.html) and Popup Script (popup.js):
 If your extension has a browser action or page action that displays a popup when clicked, you will need a popup.html file to define the structure of the popup and a popup.js file to handle its logic. The popup can contain UI elements such as buttons, input fields, or other interactive components. The popup script can interact with the background script and perform actions based on user input.
 
-Icons and Other Assets
+Icons and Other Assets:
 Icons are crucial for representing the extension in the Chrome Web Store and in the browser toolbar. The manifest file specifies various icon sizes for different use cases. Additionally, you may include other assets such as images or CSS files for styling your extension’s UI.
 
 The interaction between the components of a Chrome extension is essential for its seamless operation. Figures 1 and 2 in the original document visually demonstrate how a Chrome extension works, providing a clearer understanding.
@@ -54,16 +55,9 @@ CSS: Employed for styling the buttons, containers, and defining their appearance
 
 JavaScript: Instrumental in implementing the functionality of the buttons, such as pen drawing, text highlighting, undoing actions, and saving.
 
-How Does the Extension Look?
-Initially, the extension looks like this:
-
-
-
-
-
 This is the default color picker of HTML. It has a wide range of colors for user convenienced.
 
-Functionality Implementation
+Functionality Implementation:
 Pen Functionality: The 'pen' class is utilized for styling the button representing the pen tool. The pen functionality in this project is implemented through a series of JavaScript functions and event listeners that enable drawing on the canvas using the mouse.
 
 Event Listeners:
@@ -131,7 +125,8 @@ Displaying the Note:
 
 If a highlight object is found and it has a note associated with it, an alert message is displayed. The alert message shows the note associated with the highlighted text.
 
-Concluding Remarks
+Concluding Remarks:
+
 Starting this project as a newbie in web development has been quite a journey. Creating a web annotator Chrome extension has been a mix of learning and experimentation. Even though I'm still learning, building this extension has been a lot of fun. The idea behind the extension is to provide a handy tool for organizing online research. It has features like drawing on web pages, highlighting text, jotting down notes, and saving useful information. The current version of the extension has a few bugs and glitches that might cause issues on certain devices. However, I am working hard to resolve these issues and make it run smoother.
 
 One challenge has been that the extension only uses JavaScript for its backend, without an external database to store and retrieve data, which could limit future capabilities. I am looking into ways to improve this and make the extension even better.
